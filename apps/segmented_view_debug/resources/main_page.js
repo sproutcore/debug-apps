@@ -1,11 +1,11 @@
 // ==========================================================================
-// Project:   SegmentedTest - mainPage
+// Project:   SegmentedViewDebug - mainPage
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
-/*globals SegmentedTest */
+/*globals SegmentedViewDebug */
 
 // This page describes the main user interface for your application.  
-SegmentedTest.mainPage = SC.Page.design({
+SegmentedViewDebug.mainPage = SC.Page.design({
 
   // The main pane is made visible on screen as soon as your app is loaded.
   // Add childViews to this pane for views to display immediately on page 
@@ -161,7 +161,7 @@ SegmentedTest.mainPage = SC.Page.design({
       },
       title: 'Add',
       action: 'addSegment',
-      target: 'SegmentedTest'
+      target: 'SegmentedViewDebug'
     }),
     
     removeButton: SC.ButtonView.design({
@@ -173,7 +173,7 @@ SegmentedTest.mainPage = SC.Page.design({
       },
       title: 'Remove',
       action: 'removeSegment',
-      target: 'SegmentedTest'
+      target: 'SegmentedViewDebug'
     }),
     
     stretchButton: SC.ButtonView.design({
@@ -185,7 +185,7 @@ SegmentedTest.mainPage = SC.Page.design({
       },
       title: 'Stretch',
       action: 'stretch',
-      target: 'SegmentedTest'
+      target: 'SegmentedViewDebug'
     }),
 
     shrinkButton: SC.ButtonView.design({
@@ -197,7 +197,7 @@ SegmentedTest.mainPage = SC.Page.design({
       },
       title: 'Shrink',
       action: 'shrink',
-      target: 'SegmentedTest'
+      target: 'SegmentedViewDebug'
     }),
     
     valueTitle: SC.LabelView.design({
