@@ -1,8 +1,8 @@
 // ==========================================================================
-// Project:   SegmentedViewDebug
+// Project:   SegmentedViewTest
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
-/*globals SegmentedViewDebug */
+/*globals SegmentedViewTest */
 
 /** @namespace
 
@@ -10,10 +10,10 @@
   
   @extends SC.Object
 */
-SegmentedViewDebug = SC.Application.create(
-  /** @scope SegmentedViewDebug.prototype */ {
+SegmentedViewTest = SC.Application.create(
+  /** @scope SegmentedViewTest.prototype */ {
 
-  NAMESPACE: 'SegmentedViewDebug',
+  NAMESPACE: 'SegmentedViewTest',
   VERSION: '0.1.0',
   
   // TODO: Add global constants or singleton objects needed by your app here.
