@@ -4,6 +4,4 @@
 # ===========================================================================
 
 # Add initial buildfile information here
-config :all, :required => :sproutcore
-
-config :segmented_view_debug, :theme => :'sproutcore/ace'
+config :all, :required => :sproutcore, :theme => :'sproutcore/ace'
