@@ -1,0 +1,17 @@
+.sc-view.sc-label-view.title {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.sc-view.sc-scroll-view.images-scroll-view.sc-gray-border {
+  border: 1px solid #3C3C3C;
+}
+
+.sc-view.sc-label-view.field-label {
+  line-height: 24px;
+}
+
+.sc-view.sc-label-view.property-label {
+  font-family: Menlo, Monaco, monospace;
+  line-height: 24px;
+}
