@@ -22,7 +22,8 @@ ImageViewTest.mainPage = SC.Page.design({
         top: 20,
         centerX: 0
       },
-      value: "SC.ImageView Debug Test"
+      value: "SC.ImageView Test",
+      textAlign: SC.ALIGN_CENTER
     }),
     
     numberOfImages: SC.LabelView.design({

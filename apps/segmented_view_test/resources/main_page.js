@@ -21,7 +21,8 @@ SegmentedViewTest.mainPage = SC.Page.design({
         top: 20,
         centerX: 0
       },
-      value: "SC.SegmentedView Debug Test"
+      value: "SC.SegmentedView Test",
+      textAlign: SC.ALIGN_CENTER
     }),
     
      label1: SC.LabelView.design({
