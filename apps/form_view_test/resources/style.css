@@ -1,0 +1,30 @@
+.sc-view.sc-label-view.title {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.sc-view.form-scroll-view {
+  border: 1px solid #999;
+  background-color: #DCDCDC;
+}
+
+.sc-view.sc-form-view.sc-nested-form-view {
+  border: 1px solid #FFF;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.sc-view.sc-form-view.sc-nested-form-view .sc-nested-form {
+  border: 1px solid #999;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.sc-view.sc-label-view.data-viewer {
+  border: 1px solid #999;
+  border-right-style: none;
+  background-color: #FFFFFF;
+  padding: 5px;
+}
