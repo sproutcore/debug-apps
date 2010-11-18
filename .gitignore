@@ -1,2 +1,3 @@
 tmp
 *.tmproj
+.DS_Store
