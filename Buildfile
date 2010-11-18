@@ -4,4 +4,6 @@
 # ===========================================================================
 
 # Add initial buildfile information here
-config :all, :required => :sproutcore, :theme => :'sproutcore/ace'
+config :all, 
+  :required => [:sproutcore, 'sproutcore/forms'],
+  :theme => :'sproutcore/ace'
