@@ -1,0 +1,8 @@
+.sc-view.animation-logo {
+  background-image: sc_static('medium-logo.png');
+}
+
+.sc-view.animation-content {
+  font-family: Garamond, Georgia;
+  font-size: 22px;
+}

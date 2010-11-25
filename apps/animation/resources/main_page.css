@@ -1,0 +1,8 @@
+.sc-view.main-view {
+  -webkit-perspective: 1000;
+}
+
+.sc-view.animation-view {
+  background-image: sc_static('medium-logo.png');
+  line-height: 510px;
+}
