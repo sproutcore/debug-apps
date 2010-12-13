@@ -11,7 +11,7 @@ SegmentedViewTest.mainPage = SC.Page.design({
   // Add childViews to this pane for views to display immediately on page 
   // load.
   mainPane: SC.MainPane.design({
-    childViews: 'title label1 label2 segmentedVariable segmentedFixed valueTitle selectedLabel1 selectedLabel2 addButton removeButton stretchButton shrinkButton'.w(), //
+    childViews: 'title note label1 label2 segmentedVariable segmentedFixed valueTitle selectedLabel1 selectedLabel2 addButton removeButton stretchButton shrinkButton'.w(), //
 
     title: SC.LabelView.design({
       classNames: 'title'.w(),
@@ -23,6 +23,16 @@ SegmentedViewTest.mainPage = SC.Page.design({
       },
       value: "SC.SegmentedView Test",
       textAlign: SC.ALIGN_CENTER
+    }),
+    
+    note: SC.LabelView.design({
+      layout: {
+        left: 20,
+        top: 70,
+        bottom: 20,
+        width: 200
+      },
+      value: "Note: The red borders were added to illustrate the frame of the segmented view."
     }),
     
      label1: SC.LabelView.design({

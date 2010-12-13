@@ -4,6 +4,10 @@
 // ==========================================================================
 /*globals FormViewTest */
 
+/**
+  TODO: passing the config of the rows currently sucks.  If the singleField is of any substance, the ext hash is too far down and its hard to visually know which it applies too, the row or the single field.
+  
+*/
 // This page describes the main user interface for your application.  
 FormViewTest.mainPage = SC.Page.design({
 
@@ -32,7 +36,7 @@ FormViewTest.mainPage = SC.Page.design({
         bottom: 20,
         width: 200
       },
-      value: "Note: Addresses and BiometricSet are a ChildArray and ChildRecord of Person respectively.  The borders are not part of the theme and were added to show the nested forms."
+      value: "Note: Addresses and BiometricSet are a ChildArray and ChildRecord of Person respectively.  The borders are not part of the theme and were added to illustrate the nested forms."
     }),
     
     addAddressButton: SC.ButtonView.design({
