@@ -6,40 +6,45 @@
 
 /** @class
 
-  (Document Your View Here)
-
   @extends SC.View
 */
 ImageViewTest.ImageGridItemView = SC.View.extend(SC.ContentDisplay, SC.Control,
 /** @scope ImageViewTest.CategoryGridItem.prototype */
 {
   classNames: 'image-grid-item'.w(),
-  
+
   createChildViews: function() {
-    console.log("ImageGridItemView: creating child view");
     var childViews = [],
     view,
     content = this.get('content'),
-    height = this.get('frame').height - 10;
-    
+    height = this.get('frame').height - 10,
+    scale = this.getPath('displayDelegate.scale');
+
     view = this.createChildView(
     SC.ImageView.design({
       layout: {
         centerX: 0,
-        width: height * 1.3333333,
+        width: height,
         top: 5,
         bottom: 5
       },
+
       frameDidChange: function() {
         var frame = this.get('frame');
-        
-        this.adjust('width', (frame.height - 10) * 1.333333);
+
+        this.adjust('width', frame.height); //(frame.height - 10) * 1.333333);
       }.observes('frame'),
+
       canLoadInBackground: ImageViewTest.sourceController.get('canLoadInBackground'),
       useCanvas: ImageViewTest.sourceController.get('useCanvas'),
       wantsImageStored: ImageViewTest.sourceController.get('wantsImageStored'),
+      scaleBinding: SC.Binding.oneWay('ImageViewTest.sourceController.computedScale'),
+      offsetXBinding: SC.Binding.oneWay('ImageViewTest.sourceController.computedOffsetX'),
+      offsetYBinding: SC.Binding.oneWay('ImageViewTest.sourceController.computedOffsetY'),
+      rotationBinding: SC.Binding.oneWay('ImageViewTest.sourceController.computedRotation'),
       valueBinding: SC.Binding.oneWay('*parentView.content.src')
     }));
+
     this.set('imageView', view);
     childViews.push(view);
 
@@ -55,7 +60,7 @@ ImageViewTest.ImageGridItemView = SC.View.extend(SC.ContentDisplay, SC.Control,
       textAlign: SC.ALIGN_RIGHT
     }));
     childViews.push(view);
-    
+
     this.set('childViews', childViews);
   }
 });

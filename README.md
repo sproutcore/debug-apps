@@ -9,9 +9,11 @@ Apps
 
 ### ImageViewTest (SC.ImageView)
 
-Contains a GridView with a user defined number of images that may be resized using a SliderView.  Buttons will toggle background loading, canvas rendering and image storing.
+Contains a GridView with a user defined number of images that may be resized using a SliderView.  Buttons toggle background loading, canvas rendering and image storing.  You can also select what type of scaling to do: SC.FILL, SC.FIT\_WIDTH, SC.FIT\_HEIGHT, SC.FIT\_SMALLEST, SC.FIT\_LARGEST or a percentage (> 0.0), what offsetX or offsetY to use and what rotation to use (degrees).
 
-_status 11/18/10: debugged with git://github.com/sproutcore/sproutcore.git (cc/master branch)_
+The red borders indicate the edges of the images.
+
+_status 01/13/11: debugged with git://github.com/strobecorp/sproutcore.git (dp branch)_
 
 ### FormViewTest (SC.FormView, SC.FormRowView, SC.NestedFormView)
 

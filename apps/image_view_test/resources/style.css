@@ -3,6 +3,10 @@
   line-height: 30px;
 }
 
+.sc-view.sc-image-view {
+  border: 1px dashed #F00;
+}
+
 .sc-view.sc-scroll-view.images-scroll-view.sc-gray-border {
   border: 1px solid #3C3C3C;
 }
