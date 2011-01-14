@@ -7,6 +7,14 @@ Apps
 ----
 
 
+### AcceleratedLayer (SC.View)
+
+??
+
+### Animation (SC.View)
+
+??
+
 ### ImageViewTest (SC.ImageView)
 
 Contains a GridView with a user defined number of images that may be resized using a SliderView.  Buttons toggle background loading, canvas rendering and image storing.  You can also select what type of scaling to do: SC.FILL, SC.FIT\_WIDTH, SC.FIT\_HEIGHT, SC.FIT\_SMALLEST, SC.FIT\_LARGEST or a percentage (> 0.0), what offsetX or offsetY to use and what rotation to use (degrees).
@@ -20,6 +28,11 @@ _status 01/13/11: debugged with git://github.com/strobecorp/sproutcore.git (dp b
 Contains a form for editing the data of a Person {givenNames, familyName, addresses, biometricSet}.  Where addresses is a ChildArray of Address {label, street, locality, region, country, postalCode} and biometricSet is a ChildRecord of BiometricSet {weight, height, hairColor, eyeColor}.  There are buttons to add/remove addresses from the Person which should update the form and there is a label bound to the current Person content to validate edits of the nested records.
 
 _status 11/18/10: debugged with git://github.com/publickeating/sproutcore.git (nested\_forms branch)_
+
+
+### Gestures (SC.Gestureable, SC.Gesture)
+
+??
 
 ### SegmentedViewTest (SC.SegmentedView)
 
