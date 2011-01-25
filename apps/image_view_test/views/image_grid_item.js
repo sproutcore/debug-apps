@@ -37,12 +37,14 @@ ImageViewTest.ImageGridItemView = SC.View.extend(SC.ContentDisplay, SC.Control,
 
       canLoadInBackground: ImageViewTest.sourceController.get('canLoadInBackground'),
       useCanvas: ImageViewTest.sourceController.get('useCanvas'),
-      wantsImageStored: ImageViewTest.sourceController.get('wantsImageStored'),
+      // wantsImageStored: ImageViewTest.sourceController.get('wantsImageStored'),
       scaleBinding: SC.Binding.oneWay('ImageViewTest.sourceController.computedScale'),
-      offsetXBinding: SC.Binding.oneWay('ImageViewTest.sourceController.computedOffsetX'),
-      offsetYBinding: SC.Binding.oneWay('ImageViewTest.sourceController.computedOffsetY'),
-      rotationBinding: SC.Binding.oneWay('ImageViewTest.sourceController.computedRotation'),
-      valueBinding: SC.Binding.oneWay('*parentView.content.src')
+      // offsetXBinding: SC.Binding.oneWay('ImageViewTest.sourceController.computedOffsetX'),
+      // offsetYBinding: SC.Binding.oneWay('ImageViewTest.sourceController.computedOffsetY'),
+      // rotationBinding: SC.Binding.oneWay('ImageViewTest.sourceController.computedRotation'),
+      alignBinding: SC.Binding.oneWay('ImageViewTest.sourceController.align'),
+      valueBinding: SC.Binding.oneWay('*parentView.content.src'),
+      backgroundColorBinding: SC.Binding.oneWay('ImageViewTest.sourceController.backgroundColor')
     }));
 
     this.set('imageView', view);

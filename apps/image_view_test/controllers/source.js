@@ -28,21 +28,24 @@ ImageViewTest.sourceController = SC.ObjectController.create(
 
   useCanvas: YES,
 
-  wantsImageStored: NO,
+  // wantsImageStored: YES,
 
-  canLoadInBackground: YES,
+  canLoadInBackground: NO,
 
-  numberOfImages: 2,
+  numberOfImages: 4,
 
   scale: SC.FILL,
 
   scalePercentage: 1.0,
 
-  offsetX: 100,
-
-  offsetY: 100,
-
-  rotation: 360,
+  align: SC.ALIGN_CENTER,
+  // offsetX: 100,
+  // 
+  // offsetY: 100,
+  // 
+  // rotation: 360,
+  
+  backgroundColor: null,
 
   computedScale: function() {
     var scale = this.get('scale'),

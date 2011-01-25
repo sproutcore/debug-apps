@@ -21,11 +21,13 @@ Contains a GridView with a user defined number of images that may be resized usi
 
 The red borders indicate the edges of the images.
 
-_status 01/13/11: debugged with git://github.com/strobecorp/sproutcore.git (dp branch)_
+_status 01/24/11: debugged with git://github.com/sproutcore/sproutcore.git_
 
-### FormViewTest (SC.FormView, SC.FormRowView, SC.NestedFormView)
+### *incomplete* FormViewTest (SC.FormView, SC.FormRowView, SC.NestedFormView)
 
 Contains a form for editing the data of a Person {givenNames, familyName, addresses, biometricSet}.  Where addresses is a ChildArray of Address {label, street, locality, region, country, postalCode} and biometricSet is a ChildRecord of BiometricSet {weight, height, hairColor, eyeColor}.  There are buttons to add/remove addresses from the Person which should update the form and there is a label bound to the current Person content to validate edits of the nested records.
+
+Note: this work became a dead-end, probably won't revisit
 
 _status 11/18/10: debugged with git://github.com/publickeating/sproutcore.git (nested\_forms branch)_
 
