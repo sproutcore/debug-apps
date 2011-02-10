@@ -16,7 +16,19 @@ SegmentedViewTest = SC.Application.create(
   NAMESPACE: 'SegmentedViewTest',
   VERSION: '0.1.0',
   
-  // TODO: Add global constants or singleton objects needed by your app here.
+  alignment: SC.ALIGN_CENTER,
+  
+  isVisible: YES,
+  allowsEmptySelection: NO,
+  allowsMultipleSelection: NO,
+  
+  makeSV1Key: function() {
+    var sv1;
+    
+    sv1 = this.getPath('mainPage.mainPane.segmentedVariable');
+    sv1.becomeFirstResponder();
+  },
+  
   addSegment: function() {
     var sv1, sv2;
     var items1, items2;
@@ -33,17 +45,18 @@ SegmentedViewTest = SC.Application.create(
       value: "new " + this.count
     };
     
-    if (sv1) {
-      items1 = sv1.get('items');
-      items1.pushObject(item);
-    }
-    
-    
     if (sv2) {
       item.width = 70;
       items2 = sv2.get('items');
-      items2.pushObject(item);
+      items2.pushObject(SC.Object.create(item));
     }
+    
+    if (sv1) {
+      items1 = sv1.get('items');
+      if (!this.firstTime) this.firstTime = item.title = "One Big Bad Spud";
+      items1.pushObject(item);
+    }
+    
   },
   
   removeSegment: function() {
@@ -74,8 +87,9 @@ SegmentedViewTest = SC.Application.create(
     if (sv1) {
       items1 = sv1.get('items');
       items1 = items1.map(function(item) {
-        item.set('title', item.get('title') + "@");
+        item.title = item.title + "@";
       });
+      sv1.itemsDidChange();
     }
     
     if (sv2) {
@@ -97,8 +111,9 @@ SegmentedViewTest = SC.Application.create(
       items1 = sv1.get('items');
       items1 = items1.map(function(item) {
         var stopIndex = (item.title.length - 1 >= 0) ? item.title.length - 1 : 0;
-        item.set('title', item.get('title').substring(0, stopIndex));
+        item.title = item.title.substring(0, stopIndex);
       });
+      sv1.itemsDidChange();
     }
     
     if (sv2) {

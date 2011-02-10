@@ -12,7 +12,7 @@ ImageViewTest.mainPage = SC.Page.design({
   // Add childViews to this pane for views to display immediately on page
   // load.
   mainPane: SC.MainPane.design({
-    childViews: 'title canLoadInBackground canLoadInBackgroundSwitch useCanvas useCanvasSwitch numberOfImagesField numberOfImages imagesView scale scaleRadio scaleSlider scaleValue align alignRadio columnWidthSlider'.w(), // wantsImageStored wantsImageStoredSwitch offsetX offsetXSlider offsetXValue offsetY offsetYValue rotation rotationSlider rotationValue offsetYSlider
+    childViews: 'title useCanvas useCanvasSwitch numberOfImagesField numberOfImages imagesView scale scaleRadio scaleSlider scaleValue align alignRadio columnWidthSlider'.w(), // wantsImageStored wantsImageStoredSwitch offsetX offsetXSlider offsetXValue offsetY offsetYValue rotation rotationSlider rotationValue offsetYSlider canLoadInBackground canLoadInBackgroundSwitch
 
     title: SC.LabelView.design({
       classNames: 'title'.w(),
@@ -31,7 +31,7 @@ ImageViewTest.mainPage = SC.Page.design({
       layout: {
         top: 70,
         left: 20,
-        width: 140,
+        width: 150,
         height: 24
       },
       value: 'Number of Images',
@@ -41,7 +41,7 @@ ImageViewTest.mainPage = SC.Page.design({
     numberOfImagesField: SC.TextFieldView.design({
       layout: {
         top: 70,
-        left: 170,
+        left: 180,
         width: 50,
         height: 24
       },
@@ -51,9 +51,9 @@ ImageViewTest.mainPage = SC.Page.design({
     canLoadInBackground: SC.LabelView.design({
       classNames: 'property-label'.w(),
       layout: {
-        top: 110,
-        left: 20,
-        width: 140,
+        top: 150,
+        left: 10,
+        width: 160,
         height: 24
       },
       value: 'canLoadInBackground',
@@ -62,8 +62,8 @@ ImageViewTest.mainPage = SC.Page.design({
 
     canLoadInBackgroundSwitch: SC.SegmentedView.design({
       layout: {
-        top: 110,
-        left: 170,
+        top: 150,
+        left: 180,
         width: 100,
         height: 24
       },
@@ -77,9 +77,9 @@ ImageViewTest.mainPage = SC.Page.design({
     useCanvas: SC.LabelView.design({
       classNames: 'property-label'.w(),
       layout: {
-        top: 150,
+        top: 190,
         left: 20,
-        width: 140,
+        width: 150,
         height: 24
       },
       value: 'useCanvas',
@@ -88,8 +88,8 @@ ImageViewTest.mainPage = SC.Page.design({
 
     useCanvasSwitch: SC.SegmentedView.design({
       layout: {
-        top: 150,
-        left: 170,
+        top: 190,
+        left: 180,
         width: 100,
         height: 24
       },
@@ -131,7 +131,7 @@ ImageViewTest.mainPage = SC.Page.design({
       layout: {
         top: 230,
         left: 20,
-        width: 140,
+        width: 150,
         height: 24
       },
       value: 'scale',
@@ -141,7 +141,7 @@ ImageViewTest.mainPage = SC.Page.design({
     scaleRadio: SC.RadioView.design({
       layout: {
         top: 230,
-        left: 170,
+        left: 180,
         width: 180,
         height: 125
       },
@@ -163,8 +163,8 @@ ImageViewTest.mainPage = SC.Page.design({
 
     scaleSlider: SC.SliderView.design({
       layout: {
-        top: 355,
-        left: 170,
+        top: 340,
+        left: 180,
         width: 120,
         height: 24
       },
@@ -179,7 +179,7 @@ ImageViewTest.mainPage = SC.Page.design({
     }),
 
     scaleValue: SC.LabelView.design({
-      layout: { top: 355, left: 300, width: 80, height: 24 },
+      layout: { top: 340, left: 310, width: 80, height: 24 },
       valueBinding: SC.Binding.oneWay('ImageViewTest.sourceController.scalePercentage').transform(
         function(value) {
           return "%@%".fmt(Math.round(value * 100));
@@ -191,7 +191,7 @@ ImageViewTest.mainPage = SC.Page.design({
       layout: {
         top: 390,
         left: 20,
-        width: 140,
+        width: 150,
         height: 24
       },
       value: 'align',
@@ -201,7 +201,7 @@ ImageViewTest.mainPage = SC.Page.design({
     alignRadio: SC.RadioView.design({
       layout: {
         top: 390,
-        left: 170,
+        left: 180,
         width: 180,
         height: 225
       },

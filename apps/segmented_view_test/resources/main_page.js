@@ -11,7 +11,7 @@ SegmentedViewTest.mainPage = SC.Page.design({
   // Add childViews to this pane for views to display immediately on page 
   // load.
   mainPane: SC.MainPane.design({
-    childViews: 'title note label1 label2 segmentedVariable segmentedFixed valueTitle selectedLabel1 selectedLabel2 addButton removeButton stretchButton shrinkButton'.w(), //
+    childViews: 'title note label1 label2 segmentedVariable segmentedFixed valueTitle selectedLabel1 selectedLabel2 alignButton addButton removeButton stretchButton shrinkButton makeKeyButton1 isVisibleButton allowsMultipleSelectionButton allowsEmptySelectionButton'.w(),
 
     title: SC.LabelView.design({
       classNames: 'title'.w(),
@@ -25,59 +25,111 @@ SegmentedViewTest.mainPage = SC.Page.design({
       textAlign: SC.ALIGN_CENTER
     }),
     
+    alignButton: SC.SegmentedView.design({
+      align: SC.ALIGN_LEFT,
+      layout: {
+        height: 24,
+        width: 340,
+        left: 20,
+        top: 60
+      },
+      items: [{
+        title: "SC.ALIGN_LEFT",
+        value: SC.ALIGN_LEFT,
+        width: 110
+      },{
+        title: "SC.ALIGN_CENTER",
+        value: SC.ALIGN_CENTER,
+        width: 110
+      },{
+        title: "SC.ALIGN_RIGHT",
+        value: SC.ALIGN_RIGHT,
+        width: 110
+      }],
+      itemTitleKey: "title",
+      itemValueKey: "value",
+      valueBinding: SC.Binding.from('SegmentedViewTest.alignment')
+    }),
+    
+    isVisibleButton: SC.ButtonView.design({
+      layout: { height: 24, width: 150, left: 20, top: 100 },
+      title: "isVisible",
+      buttonBehavior: SC.TOGGLE_BEHAVIOR,
+      valueBinding: 'SegmentedViewTest.isVisible'
+    }),
+    
+    allowsMultipleSelectionButton: SC.ButtonView.design({
+      layout: { height: 24, width: 150, left: 20, top: 140 },
+      title: "allowsMultipleSelection",
+      buttonBehavior: SC.TOGGLE_BEHAVIOR,
+      valueBinding: 'SegmentedViewTest.allowsMultipleSelection'
+    }),
+    
+    allowsEmptySelectionButton: SC.ButtonView.design({
+      layout: { height: 24, width: 150, left: 20, top: 180 },
+      title: "allowsEmptySelection",
+      buttonBehavior: SC.TOGGLE_BEHAVIOR,
+      valueBinding: 'SegmentedViewTest.allowsEmptySelection'
+    }),
+    
     note: SC.LabelView.design({
       layout: {
         left: 20,
-        top: 70,
+        height: 72,
         bottom: 20,
-        width: 200
+        right: 20
       },
+      escapeHTML: NO,
       value: "Note: The red borders were added to illustrate the frame of the segmented view."
+    }),
+    
+    makeKeyButton1: SC.ButtonView.design({
+      layout: {
+        height: 24,
+        left: 20,
+        width: 110,
+        centerY: -20
+      },
+      title: "Responder",
+      icon: sc_static('keyboard--arrow.png'),
+      action: 'makeSV1Key',
+      target: 'SegmentedViewTest'
     }),
     
      label1: SC.LabelView.design({
       classNames: 'label'.w(),
       layout: {
         height: 24,
-        left: 20,
-        width: 160,
-        centerY: -20
+        width: 100,
+        centerX: 0,
+        centerY: -50
       },
-      value: "Flexible Width"
-    }),
-    
-     label2: SC.LabelView.design({
-      classNames: 'label'.w(),
-      layout: {
-        height: 24,
-        left: 20,
-        width: 160,
-        centerY: 20
-      },
-      value: "Fixed Width - Left Aligned"
+      value: "Flexible Width",
+      textAlign: SC.ALIGN_CENTER
     }),
     
     segmentedVariable: SC.SegmentedView.design({
       classNames: 'test'.w(),
       layout: {
         height: 24,
-        left: 200,
-        right: 200,
+        left: 220,
+        right: 220,
         centerY: -20
       },
-      allowsEmptySelection: YES,
-      allowsMultipleSelection: YES,
+      allowsEmptySelectionBinding: 'SegmentedViewTest.allowsEmptySelection',
+      allowsMultipleSelectionBinding: 'SegmentedViewTest.allowsMultipleSelection',
+      isVisibleBinding: 'SegmentedViewTest.isVisible',
       controlSize: SC.REGULAR_CONTROL_SIZE,
       items: [{
-        title: "One",
+        title: "One Potato",
         value: "one"
       },
       {
-        title: "Two",
+        title: "Two Potato",
         value: "two"
       },
       {
-        title: "Three",
+        title: "Three Potato",
         value: "three"
       },
       {
@@ -85,82 +137,86 @@ SegmentedViewTest.mainPage = SC.Page.design({
         value: "four"
       },
       {
-        title: "Five",
+        title: "Five Potato",
         value: "five"
       },
       {
-        title: "Six",
+        title: "Six Potato",
         value: "six"
       },
       {
-        title: "Seven",
+        title: "Seven Potato",
         value: "seven"
       },
       {
-        title: "Eight",
-        value: "eight"
+        title: "More",
+        value: "more"
       }],
       itemTitleKey: "title",
       itemValueKey: "value",
-      value: null
+      value: null,
+      alignBinding: SC.Binding.oneWay('SegmentedViewTest.alignment')
+    }),
+    
+     label2: SC.LabelView.design({
+      classNames: 'label'.w(),
+      layout: {
+        height: 24,
+        width: 100,
+        centerX: 0,
+        centerY: 30
+      },
+      value: "Fixed Width",
+      textAlign: SC.ALIGN_CENTER
     }),
     
     segmentedFixed: SC.SegmentedView.design({
       classNames: 'test'.w(),
       layout: {
         height: 24,
-        left: 200,
-        right: 200,
-        centerY: 20
+        left: 220,
+        right: 220,
+        centerY: 60
       },
-      align: SC.ALIGN_LEFT,
       controlSize: SC.REGULAR_CONTROL_SIZE,
-      allowsEmptySelection: YES,
-      allowsMultipleSelection: YES,
-      items: [{
+      allowsEmptySelectionBinding: 'SegmentedViewTest.allowsEmptySelection',
+      allowsMultipleSelectionBinding: 'SegmentedViewTest.allowsMultipleSelection',
+      isVisibleBinding: 'SegmentedViewTest.isVisible',
+      items: [SC.Object.create({
         title: "One",
         value: "one",
         width: 70
-      },
-      {
+      }),
+      SC.Object.create({
         title: "Two",
         value: "two",
         width: 70
-      },
-      {
+      }),
+      SC.Object.create({
         title: "Three",
         value: "three",
         width: 70
-      },
-      {
+      }),
+      SC.Object.create({
         title: "Four",
         value: "four",
         width: 70
-      },
-      {
+      }),
+      SC.Object.create({
         title: "Five",
         value: "five",
         width: 70
-      },
-      {
+      }),
+      SC.Object.create({
         title: "Six",
         value: "six",
         width: 70
-      },
-      {
-        title: "Seven",
-        value: "seven",
-        width: 70
-      },
-      {
-        title: "Eight",
-        value: "eight",
-        width: 70
-      }],
+      })],
       itemTitleKey: "title",
       itemValueKey: "value",
       itemWidthKey: "width",
-      value: null
+      value: null,
+      alignBinding: SC.Binding.oneWay('SegmentedViewTest.alignment')
     }),
 
     addButton: SC.ButtonView.design({
@@ -168,7 +224,7 @@ SegmentedViewTest.mainPage = SC.Page.design({
         height: 24,
         width: 100,
         centerX: -60,
-        centerY: 70
+        centerY: 110
       },
       title: 'Add',
       action: 'addSegment',
@@ -180,7 +236,7 @@ SegmentedViewTest.mainPage = SC.Page.design({
         height: 24,
         width: 100,
         centerX: 60,
-        centerY: 70
+        centerY: 110
       },
       title: 'Remove',
       action: 'removeSegment',
@@ -192,7 +248,7 @@ SegmentedViewTest.mainPage = SC.Page.design({
         height: 24,
         width: 100,
         centerX: -60,
-        centerY: 110
+        centerY: 150
       },
       title: 'Stretch',
       action: 'stretch',
@@ -204,7 +260,7 @@ SegmentedViewTest.mainPage = SC.Page.design({
         height: 24,
         width: 100,
         centerX: 60,
-        centerY: 110
+        centerY: 150
       },
       title: 'Shrink',
       action: 'shrink',
@@ -213,8 +269,8 @@ SegmentedViewTest.mainPage = SC.Page.design({
     
     valueTitle: SC.LabelView.design({
       layout: {
-        right: 50,
-        width: 100,
+        right: 20,
+        width: 140,
         height: 24,
         centerY: -40
       },
@@ -225,8 +281,8 @@ SegmentedViewTest.mainPage = SC.Page.design({
     
     selectedLabel1: SC.LabelView.design({
       layout: {
-        right: 50,
-        width: 100,
+        right: 20,
+        width: 140,
         height: 24,
         centerY: -20
       },
@@ -236,8 +292,8 @@ SegmentedViewTest.mainPage = SC.Page.design({
     
     selectedLabel2: SC.LabelView.design({
       layout: {
-        right: 50,
-        width: 100,
+        right: 20,
+        width: 140,
         height: 24,
         centerY: 20
       },

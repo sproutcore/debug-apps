@@ -1,14 +1,16 @@
-.sc-view.sc-label-view.title {
-  font-size: 20px;
-  line-height: 30px;
-}
+.sc-view.sc-label-view {
 
-.sc-view.sc-label-view.label {
-  font-size: 13px;
-  line-height: 24px;
-  text-align: right;
+  &.label {
+    font-size: 13px;
+    line-height: 24px;
+   
+    &.title {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
 }
 
 .sc-view.sc-segmented-view.test {
-  border: 1px solid #F44;
+  border: 1px dashed #F44;
 }

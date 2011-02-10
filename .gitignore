@@ -1,3 +1,7 @@
 tmp
 *.tmproj
 .DS_Store
+.sass-cache
+.bundle
+.strobe
+bin
