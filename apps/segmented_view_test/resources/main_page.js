@@ -80,7 +80,7 @@ SegmentedViewTest.mainPage = SC.Page.design({
         right: 20
       },
       escapeHTML: NO,
-      value: "Note: The red borders were added to illustrate the frame of the segmented view."
+      value: "Note: The red borders were added to illustrate the frame of the segmented view.<br>Some Icons by <a href='http://p.yusukekamiyamane.com/'>Yusuke Kamiyamane</a>."
     }),
     
     makeKeyButton1: SC.ButtonView.design({
@@ -120,6 +120,9 @@ SegmentedViewTest.mainPage = SC.Page.design({
       allowsMultipleSelectionBinding: 'SegmentedViewTest.allowsMultipleSelection',
       isVisibleBinding: 'SegmentedViewTest.isVisible',
       controlSize: SC.REGULAR_CONTROL_SIZE,
+      overflowIcon: sc_static('ui-menu.png'),
+      overflowTitle: "More&hellip;",
+      overflowToolTip: "One Big Bad Spud...",
       items: [{
         title: "One Potato",
         value: "one"
@@ -147,10 +150,6 @@ SegmentedViewTest.mainPage = SC.Page.design({
       {
         title: "Seven Potato",
         value: "seven"
-      },
-      {
-        title: "More",
-        value: "more"
       }],
       itemTitleKey: "title",
       itemValueKey: "value",
